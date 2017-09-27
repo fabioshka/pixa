@@ -3,18 +3,37 @@
 	padding: 0;
 	font-family: 'Roboto Condensed', sans-serif;
 }
+body, html {
+    height: 100%;
+    margin: 0;
+}
 #nav {
 	width: 100%;
 	text-align: center;
 	margin-top: 2em;
+	float: left;
 }
 #nav a {
 	text-decoration: none;
-	color: black;
+	color: white;
 	padding: 0.5em;
+}
+#nav a:hover {
+	color: silver;
 }
 #nav li{
 	list-style: none;
 	display: inline;
-	
+}
+#bg {
+    /* The image used */
+    background-image: url("img/country.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
