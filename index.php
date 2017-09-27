@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Startseite</title>
-	<link href="style.css" rel="stylesheet"> 
+	<link href="style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
   </head>
   <body>
    <div id="header"></div>
