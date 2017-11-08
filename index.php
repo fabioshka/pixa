@@ -5,10 +5,24 @@
     <title>Startseite</title>
 	<link href="style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+	<style>
+				#bg {
+			/* The image used */
+			background-image: url("img/country.jpg");
+
+			/* Full height */
+			height: 100%; 
+
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
   </head>
   <body>
 	<?php include("nav.php"); ?>
-	<div id="header">
+	<div id="header1">
 		<p id="top">PIXA</p>
 		<p id="bottom">Share your pictures!</p>
 	</div>
