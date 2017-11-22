@@ -60,13 +60,21 @@ body, html {
 	margin-top: 2em;
 	margin-left: 25%;
 	margin-right: 25%;
-	margin-bottom: 5em;
+	margin-bottom: 2em;
+	font-size: 0.9em;
+	font-weight: 300;
 }
 #content h1 {
 	color: #4f4f4f;
 	width: 100%;
 	margin-top: 1em;
 	margin-bottom: 1em;
+}
+#content h2 {
+	color: #4f4f4f;
+	width: 100%;
+	margin-bottom: 0.5em;
+	font-size: 1.4em;
 }
 #content p {
 	padding-bottom: 0.7em;	
@@ -88,4 +96,9 @@ body, html {
 #form [type=submit]:hover{
 	background-color: black; /* Green */
     color: white;
+}
+#footer {
+	background-color: #424242;
+	height: 10em;
+	color: white;
 }
