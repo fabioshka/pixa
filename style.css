@@ -97,8 +97,14 @@ body, html {
 	background-color: black; /* Green */
     color: white;
 }
+<<<<<<< HEAD
 #footer {
 	background-color: #424242;
 	height: 10em;
 	color: white;
 }
+=======
+#login { 
+
+}
+>>>>>>> 3a8d6ada889b91aafcb6d57c2e4bd1d251b7152d
