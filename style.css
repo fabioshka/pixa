@@ -64,9 +64,13 @@ body, html {
 }
 #content h1 {
 	color: #4f4f4f;
-	text-align: center;
 	width: 100%;
-	
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+#content p {
+	padding-bottom: 0.7em;	
+	text-align: justify;
 }
 #form [type=submit]{
 	color: black;
