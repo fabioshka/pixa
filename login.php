@@ -30,7 +30,7 @@
    <div id="clear"></div><!--Ende clear-->
    
    <div id="content">
-   <h1>Registrierung</h1>
+   <h1>Login</h1>
 	<?php 
 session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=pixa', 'root', '');

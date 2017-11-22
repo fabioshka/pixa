@@ -1,6 +1,22 @@
-<?php 
-$name= "FABIO";
- ?>
+<?php
+session_start();
+if(!isset($_SESSION['userid'])) {
+ die('Bitte zuerst <a href="login.php">einloggen</a>');
+}
+ 
+include("dbconnect.php");
+ 
+//Abfrage der Nutzer ID vom Login
+$userid = $_SESSION['userid'];
+
+
+$sql = "SELECT * FROM users ";
+foreach ($pdo->query($sql) as $row) {
+   $benutzername = $row['benutzername'];
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +48,7 @@ $name= "FABIO";
 	<body>
 	<div id="content">
 		
-		<h1>BILDSTRECKE VON <?php echo $name; ?></h1>
+		<h1>BILDSTRECKE VON <?php echo $benutzername; ?></h1>
 		
    </div><!--Ende Content!-->
    <div id="footer"></div><!--Ende Footer!-->
