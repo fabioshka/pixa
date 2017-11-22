@@ -41,7 +41,7 @@
 	et netus et malesuada. Eros donec ac odio tempor orci dapibus. Sit amet venenatis urna cursus eget. Dignissim enim sit amet 
 	venenatis urna cursus eget nunc. Pellentesque sit amet porttitor eget dolor morbi non. Tortor pretium viverra suspendisse potenti. </p><br><br><br>
 	
-	<img src="img/macbook.jpg" title="MacBook" style="width:50%; float:right; margin-left:1.5em;"/>
+	<img src="img/foto.jpg" title="Foto" style="width:50%; float:right; margin-left:1.5em;"/>
 	
 	<h2>Dolor sit amet</h2>
 	<p>A scelerisque purus semper eget duis at tellus. Suspendisse sed nisi lacus sed. Varius duis at consectetur lorem donec. Non consectetur a erat nam 
