@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+echo $_SESSION['userid'];
+echo "Test";
+?>
 <!DOCTYPE html>
 <html lang="de">
   <head>

@@ -1,7 +1,9 @@
 <?php
 session_start();
+
 if(!isset($_SESSION['userid'])) {
- header ( 'Location: login.php' );
+// die(header ( 'Location: login.php' ));
+echo $_SESSION['userid'];
 }
 
 include("dbconnect.php");
@@ -10,11 +12,11 @@ include("dbconnect.php");
 $userid = $_SESSION['userid'];
 
 
-$sql = "SELECT * FROM users ";
+
+$sql = "SELECT * FROM users WHERE id = $userid";
 foreach ($pdo->query($sql) as $row) {
    $benutzername = $row['benutzername'];
 }
-
 ?>
 
 
