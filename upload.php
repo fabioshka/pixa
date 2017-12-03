@@ -33,11 +33,11 @@
    <h1>Bild hochladen</h1>
 		<form action="upload_funktion.php" method="post" enctype="multipart/form-data">
 		Fotograph:</br>
-		<input type="name" name="fotograph"></br>
+		<input type="text" name="fotograph"></br>
 		Name:</br>
-		<input type="name" name="name"></br>
+		<input type="text" name="name"></br>
 		Kategorie:</br>
-		<select name="kategorie">
+		<select type="text" name="kategorie">
 			<option value="natur">Natur</option>
 			<option value="macro">Macro</option>
 			<option value="portrait">Portrait</option>
@@ -45,6 +45,7 @@
 		</select> </br> </br>
 		<input type="file" name="datei"><br> </br>
 		<input type="submit" value="Hochladen">
+		<!--<button type="submit" name="hochladen">Hochladen</button>-->
 		</form>
 
    </div><!--Ende Content!-->

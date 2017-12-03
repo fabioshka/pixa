@@ -32,6 +32,9 @@
    <div id="content">
 
 <?php
+
+ include("dbconnect.php"); 
+ 
 $upload_folder = 'img/'; //Das Upload-Verzeichnis
 $filename = pathinfo($_FILES['datei']['name'], PATHINFO_FILENAME);
 $extension = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));
@@ -69,29 +72,31 @@ if(file_exists($new_path)) { //Falls Datei existiert, hänge eine Zahl an den Da
  $id++;
  } while(file_exists($new_path));
 }
- 
+
 //Alles okay, verschiebe Datei an neuen Pfad
 move_uploaded_file($_FILES['datei']['tmp_name'], $new_path);
-echo 'Bild erfolgreich hochgeladen: <a href="'.$new_path.'">'.$new_path.'</a>';
+
 
 
 // Upload in Datenbank
-$conn=mysqli_connect("localhost","root","","pixa");
 
-if(!$conn)
-{
-die("Connection failed: " . mysqli_connect_error());
+ $name = $_POST["name"];
+ $fotograph = $_POST["fotograph"];
+ $kategorie = $_POST["kategorie"];
+
+    $sql = "INSERT INTO bilder (Link, Name, Fotograph, Kategorie)
+    VALUES ('$new_path','$name','$fotograph','$kategorie')";
+	
+	if ($conn->query($sql) === TRUE) {
+    echo 'Bild erfolgreich hochgeladen: <a href="'.$new_path.'">'.$new_path.'</a>';
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
-  if(isset($_POST['hochladen']))
-{
-    $sql = "INSERT INTO bilder (link, name, fotograph, kategorie)
-    VALUES ('$new_path','".$_POST['name']."','".$_POST['photograph']."','".$_POST['kategorie']."')";
-
-    $result = mysqli_query($conn,$sql);
-}
+  
+	
 
 
-echo $new_path;
+
 ?>
 
 	
