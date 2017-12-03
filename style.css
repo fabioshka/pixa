@@ -10,6 +10,10 @@ body, html {
 #clear {
 	clear: both;
 }
+#absatz {
+	margin-top: 2em;
+	display: block;
+}
 #nav {
 	width: 100%;
 	text-align: center;
@@ -79,7 +83,7 @@ body, html {
 	text-transform: uppercase;
 }
 #content p {
-	padding-bottom: 0.7em;	
+	padding-bottom: 0.7em;
 	text-align: justify;
 }
 #form [type=submit]{
@@ -88,12 +92,12 @@ body, html {
 	border: 2px solid black;
 	padding: 0.5em;
 	border-radius: 5px;
-	margin-top: 0.5em; 
+	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 	cursor: pointer;
 	-webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-	
+
 }
 #form [type=submit]:hover{
 	background-color: black; /* Green */
@@ -108,7 +112,7 @@ body, html {
 	color: white;
 }
 =======
-#login { 
+#login {
 
 }
 >>>>>>> 3a8d6ada889b91aafcb6d57c2e4bd1d251b7152d
