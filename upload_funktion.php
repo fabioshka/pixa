@@ -85,7 +85,7 @@ die("Connection failed: " . mysqli_connect_error());
   if(isset($_POST['hochladen']))
 {
     $sql = "INSERT INTO bilder (link, name, fotograph, kategorie)
-    VALUES (''$new_path'','.$_POST['name']."','".$_POST['photograph']."','".$_POST['kategorie']."')";
+    VALUES ('$new_path','".$_POST['name']."','".$_POST['photograph']."','".$_POST['kategorie']."')";
 
     $result = mysqli_query($conn,$sql);
 }
