@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -32,7 +35,6 @@
    <div id="content">
    <h1>Login</h1>
 	<?php
-session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=pixa', 'root', '');
 
 if(isset($_GET['login'])) {
@@ -46,7 +48,7 @@ if(isset($_GET['login'])) {
  //Überprüfung des Passworts
  if ($user !== false && password_verify($passwort, $user['passwort'])) {
  $_SESSION['userid'] = $user['id'];
- die('Login erfolgreich. Weiter zu <a href="geheim.php">internen Bereich</a>');
+  echo "Hier<a href=\"profil.php\">Link</a>";//header ( 'Location: profil.php' );
  } else {
  $errorMessage = "E-Mail oder Passwort war ungültig<br>";
  }
@@ -70,6 +72,9 @@ if(isset($errorMessage)) {
 			</form>
 		</div><!--Ende login-->
    </div><!--Ende Content!-->
-   <div id="footer"></div><!--Ende Footer!-->
+   <div id="clear"></div>
+   <div id="footer">
+     copyright by pixa AG
+   </div><!--Ende Footer!-->
  </body><!-- Ende Body!-->
 </html>

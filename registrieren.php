@@ -48,15 +48,15 @@ if(isset($_GET['register'])) {
  $passwort2 = $_POST['passwort2'];
 
  if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
- echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
+ echo '<b>Bitte eine gültige E-Mail-Adresse eingeben</b><br><br>';
  $error = true;
  }
  if(strlen($passwort) == 0) {
- echo 'Bitte ein Passwort angeben<br>';
+ echo '<b>Bitte ein Passwort angeben</b><br><br>';
  $error = true;
  }
  if($passwort != $passwort2) {
- echo 'Die Passwörter müssen übereinstimmen<br>';
+ echo '<b>Die Passwörter müssen übereinstimmen</b><br><br>';
  $error = true;
  }
 
@@ -67,7 +67,7 @@ if(isset($_GET['register'])) {
  $user = $statement->fetch();
 
  if($user !== false) {
- echo 'Diese E-Mail-Adresse ist bereits vergeben<br>';
+ echo '<b>Diese E-Mail-Adresse ist bereits vergeben</b><br>';
  $error = true;
  }
  }
@@ -80,10 +80,10 @@ if(isset($_GET['register'])) {
  $result = $statement->execute(array('benutzername'=>$benutzername, 'email' => $email, 'passwort' => $passwort_hash));
 
  if($result) {
- echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
+ echo '<b>Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a></b><br>';
  $showFormular = false;
  } else {
- echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
+ echo '<b>Beim Abspeichern ist leider ein Fehler aufgetreten</b><br><br>';
  }
  }
 }
@@ -112,9 +112,10 @@ Passwort wiederholen:<br>
 } //Ende von if($showFormular)
 ?>
  </div> <!--Ende Content-->
-
+ 
+<div id="clear"></div>
  <div id="footer">
-
+   copyright by pixa AG
  </div><!--Ende Footer!-->
 
 </body>

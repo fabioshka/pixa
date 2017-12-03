@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -55,7 +58,7 @@
    </div><!--Ende Content!-->
    <div id="clear"></div>
    <div id="footer">
-
+     copyright by pixa AG
    </div><!--Ende Footer!-->
  </body><!-- Ende Body!-->
 </html>
