@@ -53,6 +53,7 @@
 	tortor aliquam nulla. Morbi tristique senectus et netus et.</p>
 
    </div><!--Ende Content!-->
+   <div id="clear"></div>
    <div id="footer">
 
    </div><!--Ende Footer!-->

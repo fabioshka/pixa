@@ -1,11 +1,11 @@
 <?php
 session_start();
 if(!isset($_SESSION['userid'])) {
- die('Bitte zuerst <a href="login.php">einloggen</a>');
+ header ( 'Location: login.php' );
 }
- 
+
 include("dbconnect.php");
- 
+
 //Abfrage der Nutzer ID vom Login
 $userid = $_SESSION['userid'];
 
@@ -31,7 +31,7 @@ foreach ($pdo->query($sql) as $row) {
 			background-image: url("img/country.jpg");
 
 			/* Full height */
-			height: 50%; 
+			height: 50%;
 
 			/* Center and scale the image nicely */
 			background-position: center;
@@ -44,15 +44,13 @@ foreach ($pdo->query($sql) as $row) {
 	<?php include("nav.php"); ?>
    <div id="bg"></div><!--Ende bg-->
    <div id="clear"></div><!--Ende clear-->
-   
+
 	<body>
 	<div id="content">
-		
+
 		<h1>BILDSTRECKE VON <?php echo $benutzername; ?></h1>
-		
+
    </div><!--Ende Content!-->
    <div id="footer"></div><!--Ende Footer!-->
  </body><!-- Ende Body!-->
 </html>
-
-
