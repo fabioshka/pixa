@@ -1,8 +1,5 @@
 <?php
 session_start();
-
-echo $_SESSION['userid'];
-echo "Test";
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -61,7 +58,7 @@ echo "Test";
    </div><!--Ende Content!-->
    <div id="clear"></div>
    <div id="footer">
-
+     copyright by pixa AG
    </div><!--Ende Footer!-->
  </body><!-- Ende Body!-->
 </html>

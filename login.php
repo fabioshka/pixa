@@ -72,6 +72,9 @@ if(isset($errorMessage)) {
 			</form>
 		</div><!--Ende login-->
    </div><!--Ende Content!-->
-   <div id="footer"></div><!--Ende Footer!-->
+   <div id="clear"></div>
+   <div id="footer">
+     copyright by pixa AG
+   </div><!--Ende Footer!-->
  </body><!-- Ende Body!-->
 </html>

@@ -1,8 +1,7 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['userid'])) {
-// die(header ( 'Location: login.php' ));
+ die(header ( 'Location: login.php' ));
 echo $_SESSION['userid'];
 }
 
@@ -52,7 +51,10 @@ foreach ($pdo->query($sql) as $row) {
 
 		<h1>BILDSTRECKE VON <?php echo $benutzername; ?></h1>
 
-   </div><!--Ende Content!-->
-   <div id="footer"></div><!--Ende Footer!-->
+  </div><!--Ende Content!-->
+  <div id="clear"></div>
+   <div id="footer">
+     copyright by pixa AG
+   </div><!--Ende Footer!-->
  </body><!-- Ende Body!-->
 </html>

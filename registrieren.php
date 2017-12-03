@@ -112,9 +112,10 @@ Passwort wiederholen:<br>
 } //Ende von if($showFormular)
 ?>
  </div> <!--Ende Content-->
-
+ 
+<div id="clear"></div>
  <div id="footer">
-
+   copyright by pixa AG
  </div><!--Ende Footer!-->
 
 </body>
