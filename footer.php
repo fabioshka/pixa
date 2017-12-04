@@ -4,7 +4,7 @@
       <ul>
         <li><h1>NAVIGATION</h1></li>
         <li><a href="index.php">HOME</a></li>
-        <li><a href="#">ENTDECKEN</a></li>
+        <li><a href="entdecken.php">ENTDECKEN</a></li>
         <li><a href="profil.php">MEIN PROFIL</a></li>
         <li><a href="login.php">LOGIN</a></li>
       </ul>

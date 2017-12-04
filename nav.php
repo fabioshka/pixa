@@ -1,7 +1,7 @@
 <div id="nav">
 <ul>
 	<a href="index.php"><li>HOME</li></a>
-	<a href="#"><li>ENTDECKEN</li></a>
+	<a href="entdecken.php"><li>ENTDECKEN</li></a>
 	<a href="profil.php"><li>MEIN PROFIL</li></a>
 
 	<?php

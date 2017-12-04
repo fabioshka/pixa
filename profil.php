@@ -30,7 +30,7 @@ foreach ($conn->query($sql) as $row) {
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Startseite</title>
+    <title>Profil</title>
 	<link href="style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 	<style>
