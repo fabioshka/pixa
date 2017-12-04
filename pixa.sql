@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.2
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Erstellungszeit: 04. Dez 2017 um 18:06
+-- Erstellungszeit: 04. Dez 2017 um 22:03
 -- Server-Version: 5.6.35
--- PHP-Version: 7.1.6
+-- PHP-Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bilder` (
-  `id` int(11) NOT NULL,
+  `bilderid` int(11) NOT NULL,
   `fotograf_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `beschrieb` varchar(500) NOT NULL,
@@ -33,10 +33,8 @@ CREATE TABLE `bilder` (
 -- Daten für Tabelle `bilder`
 --
 
-INSERT INTO `bilder` (`id`, `fotograf_id`, `name`, `beschrieb`, `kategorie`, `link`) VALUES
-(1, 1, 'Fotografin', '', 'portrait', 'img/foto_2.jpg'),
-(2, 1, 'Fotografin 2', 'kajsdfkhjasd ajshfkjasdhfk sdkfj hsdkf \r\nskdjfh \r\nsdkjfh \r\nsdfljh sd\r\n', 'portrait', 'img/foto_2_1.jpg'),
-(3, 1, 'xf,g', 'ksjhdfkjsh', 'portrait', 'img/foto_2_2.jpg');
+INSERT INTO `bilder` (`bilderid`, `fotograf_id`, `name`, `beschrieb`, `kategorie`, `link`) VALUES
+(7, 1, 'Fotografin', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et e', 'portrait', 'img/foto.jpg');
 
 -- --------------------------------------------------------
 
@@ -70,7 +68,7 @@ INSERT INTO `users` (`id`, `benutzername`, `email`, `passwort`, `vorname`, `nach
 -- Indizes für die Tabelle `bilder`
 --
 ALTER TABLE `bilder`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`bilderid`);
 
 --
 -- Indizes für die Tabelle `users`
@@ -87,7 +85,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `bilder`
 --
 ALTER TABLE `bilder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bilderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT für Tabelle `users`
 --
