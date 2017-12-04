@@ -5,7 +5,7 @@ if(!isset($_SESSION['userid'])) {
 
   <script type="text/javascript">
     <!--
-    window.location.href = "upload.php";
+    window.location.href = "login.php";
     //–>
   </script>
 
