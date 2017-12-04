@@ -11,11 +11,11 @@ if(!isset($_SESSION['userid'])) {
 
   <?php
 }
-
-if($_GET['upload'] == 1) {
-  echo "<div id=\"erfolg\">Dein Bild wurde hochladen</div>";
+if(isset($_GET['upload'])){
+  if($_GET['upload'] == 1) {
+    echo "<div id=\"erfolg\">Dein Bild wurde hochladen</div>";
+  }
 }
-
 include("dbconnect.php");
 
 //Abfrage der Nutzer ID vom Login
