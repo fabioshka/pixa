@@ -59,6 +59,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+		text-transform: uppercase;
 }
 #header2 {
 	/*float: left;*/
@@ -68,6 +69,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+		text-transform: uppercase;
 }
 #top {
 	font-size: 15em;
@@ -78,7 +80,6 @@ body {
 	margin-top: -1em;
 	font-weight: 300;
 }
-
 #content {
 	margin-top: 5em;
 	margin-bottom: 5em;
@@ -107,6 +108,27 @@ body {
 	padding-bottom: 0.7em;
 	text-align: justify;
 }
+#bild_wrapper {
+	-webkit-box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.32);
+	-moz-box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.32);
+	box-shadow: 10px 10px 24px -12px rgba(0,0,0,0.32);
+}
+#bild_beschrieb_wrapper {
+	color: white;
+	background-color: rgba(79, 79, 79, 0.3);
+	padding: 2em;
+	margin-top: -4px;
+	margin-bottom: 2em;
+}
+#bild_title {
+	font-size: 1.1em;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+#bild_wrapper img{
+	width: 100%;
+	margin: 0;
+}
 #form [type=submit]{
 	color: black;
 	background-color: white;
@@ -117,7 +139,7 @@ body {
 	margin-bottom: 0.5em;
 	cursor: pointer;
 	-webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+  transition-duration: 0.4s;
 
 }
 #form [type=submit]:hover{
@@ -128,7 +150,7 @@ body {
 	margin-top: 5em;
 	display: block;
 	background-color: #4f4f4f;
-	width: 100;
+	width: 100%;
 }
 #footer_content {
 	width: 50em;
@@ -242,6 +264,25 @@ body {
 	font-size: 1em;
 	font-weight: 100;
 }
+#upload textarea {
+	width: 100%;
+	height: 10em;
+	resize: none;
+	padding: 1em;
+	border: 0.5px solid grey;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 1em;
+	font-weight: 100;
+}
 #upload label {
 	font-size: 1.2em;
+}
+#erfolg {
+	color: white;
+	padding: 1em;
+	background-color: #96cc2a;
+	text-align: center;
+	width: 100%;
 }

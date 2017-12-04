@@ -5,11 +5,15 @@ if(!isset($_SESSION['userid'])) {
 
   <script type="text/javascript">
     <!--
-    window.location.href = "login.php";
+    window.location.href = "upload.php";
     //–>
   </script>
 
   <?php
+}
+
+if($_GET['upload'] == 1) {
+  echo "<div id=\"erfolg\">Dein Bild wurde hochladen</div>";
 }
 
 include("dbconnect.php");
@@ -22,7 +26,7 @@ $userid = $_SESSION['userid'];
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Startseite</title>
+    <title>Upload</title>
 	<link href="style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 	<style>
@@ -55,11 +59,11 @@ $userid = $_SESSION['userid'];
     <div id="upload">
   		<form action="upload_funktion.php" method="post" enctype="multipart/form-data">
 
-  		<label for"fotograph">Fotograph</label></br></br>
-  		<input type="text" name="fotograph"></br></br>
-
   		<label for"name">Name</label></br></br>
   		<input type="text" name="name"></br></br>
+
+      <label for"beschrieb">Beschrieb</label></br></br>
+  		<textarea name="beschrieb"></textarea><br><br>
 
   		<label for"kategorie">Kategorie</label></br></br>
   		<select type="text" name="kategorie">
@@ -69,7 +73,7 @@ $userid = $_SESSION['userid'];
   			<option value="kunst">Kunst</option>
   		</select> </br> </br>
 
-      <label for"datei">Bild auswählen</label></br></br>
+      <label for"datei">Bild auswählen (max 500KB)</label></br></br>
         <input type="file" name="datei"><br> </br><br>
 
       <input type="submit" value="Hochladen">

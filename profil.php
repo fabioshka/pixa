@@ -50,6 +50,10 @@ foreach ($conn->query($sql) as $row) {
   </head>
     <body>
 	<?php include("nav.php"); ?>
+  <div id="header2">
+		<p id="top"><?php echo $benutzername; ?></p>
+		<p id="bottom">Share your pictures!</p>
+	</div><!--Ende header2-->
    <div id="bg"></div><!--Ende bg-->
    <div id="clear"></div><!--Ende clear-->
 
@@ -58,10 +62,32 @@ foreach ($conn->query($sql) as $row) {
 
 		<h1>BILDSTRECKE VON <?php echo $benutzername; ?></h1>
 
+    <?php
+    $sql = "SELECT * FROM users
+            LEFT JOIN bilder ON users.id = bilder.fotograf_id
+            WHERE users.id = $userid";
+    foreach ($conn->query($sql) as $row) {
+       ?>
+       <div id="bild_wrapper">
+          <img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>">
+
+          <div id="bild_beschrieb_wrapper">
+            <div id="bild_title">
+              <p><?php echo $row['name']; ?></p>
+            </div><!--Ende bild_title-->
+
+            <div id="bild_beschrieb">
+              <p><?php echo $row['beschrieb']; ?></p>
+            </div><!--Ende bild_beschrieb-->
+          </div><!--Ende bild_beschrieb_wrapper-->
+        </div><!--ende bild_wrapper-->
+       <?php
+    }
+    ?>
   </div><!--Ende Content!-->
   <div id="clear"></div>
 
     <?php include("footer.php"); ?>
-    
+
  </body><!-- Ende Body!-->
 </html>
