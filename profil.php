@@ -1,8 +1,15 @@
 <?php
 session_start();
 if(!isset($_SESSION['userid'])) {
- die(header ( 'Location: login.php' ));
-echo $_SESSION['userid'];
+  ?>
+
+  <script type="text/javascript">
+    <!--
+    window.location.href = "login.php";
+    //–>
+  </script>
+
+  <?php
 }
 
 include("dbconnect.php");
@@ -13,7 +20,7 @@ $userid = $_SESSION['userid'];
 
 
 $sql = "SELECT * FROM users WHERE id = $userid";
-foreach ($pdo->query($sql) as $row) {
+foreach ($conn->query($sql) as $row) {
    $benutzername = $row['benutzername'];
 }
 ?>
@@ -31,7 +38,7 @@ foreach ($pdo->query($sql) as $row) {
 			/* The image used */
 			background-image: url("img/country.jpg");
 
-			/* Full height */
+			/* height */
 			height: 50%;
 
 			/* Center and scale the image nicely */
@@ -53,8 +60,8 @@ foreach ($pdo->query($sql) as $row) {
 
   </div><!--Ende Content!-->
   <div id="clear"></div>
-   <div id="footer">
-     copyright by pixa AG
-   </div><!--Ende Footer!-->
+
+    <?php include("footer.php"); ?>
+    
  </body><!-- Ende Body!-->
 </html>

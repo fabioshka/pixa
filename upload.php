@@ -1,3 +1,23 @@
+<?php
+session_start();
+if(!isset($_SESSION['userid'])) {
+  ?>
+
+  <script type="text/javascript">
+    <!--
+    window.location.href = "login.php";
+    //–>
+  </script>
+
+  <?php
+}
+
+include("dbconnect.php");
+
+//Abfrage der Nutzer ID vom Login
+$userid = $_SESSION['userid'];
+
+?>
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -11,7 +31,7 @@
 			background-image: url("img/country.jpg");
 
 			/* Full height */
-			height: 100%; 
+			height: 50%;
 
 			/* Center and scale the image nicely */
 			background-position: center;
@@ -22,33 +42,43 @@
   </head>
   <body>
 	<?php include("nav.php"); ?>
-	<div id="header1">
-		<p id="top">PIXA</p>
+	<div id="header2">
+		<p id="top">UPLOAD</p>
 		<p id="bottom">Share your pictures!</p>
 	</div>
    <div id="bg"></div><!--Ende bg-->
    <div id="clear"></div><!--Ende clear-->
-   
+
    <div id="content">
    <h1>Bild hochladen</h1>
-		<form action="upload_funktion.php" method="post" enctype="multipart/form-data">
-		Fotograph:</br>
-		<input type="text" name="fotograph"></br>
-		Name:</br>
-		<input type="text" name="name"></br>
-		Kategorie:</br>
-		<select type="text" name="kategorie">
-			<option value="natur">Natur</option>
-			<option value="macro">Macro</option>
-			<option value="portrait">Portrait</option>
-			<option value="kunst">Kunst</option>
-		</select> </br> </br>
-		<input type="file" name="datei"><br> </br>
-		<input type="submit" value="Hochladen">
-		<!--<button type="submit" name="hochladen">Hochladen</button>-->
-		</form>
+
+    <div id="upload">
+  		<form action="upload_funktion.php" method="post" enctype="multipart/form-data">
+
+  		<label for"fotograph">Fotograph</label></br></br>
+  		<input type="text" name="fotograph"></br></br>
+
+  		<label for"name">Name</label></br></br>
+  		<input type="text" name="name"></br></br>
+
+  		<label for"kategorie">Kategorie</label></br></br>
+  		<select type="text" name="kategorie">
+  			<option value="natur">Natur</option>
+  			<option value="macro">Macro</option>
+  			<option value="portrait">Portrait</option>
+  			<option value="kunst">Kunst</option>
+  		</select> </br> </br>
+
+      <label for"datei">Bild auswählen</label></br></br>
+        <input type="file" name="datei"><br> </br><br>
+
+      <input type="submit" value="Hochladen">
+  		</form>
+    </div><!--Ende upload-->
 
    </div><!--Ende Content!-->
-   <div id="footer"></div><!--Ende Footer!-->
+
+    <?php include("footer.php"); ?>
+
  </body><!-- Ende Body!-->
 </html>

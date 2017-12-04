@@ -15,7 +15,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=pixa', 'root', '');
 			background-image: url("img/country.jpg");
 
 			/* Full height */
-			height: 100%;
+			height: 50%;
 
 			/* Center and scale the image nicely */
 			background-position: center;
@@ -26,9 +26,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=pixa', 'root', '');
   </head>
   <body>
 	<?php include("nav.php"); ?>
-	<div id="header1">
-		<p id="top">PIXA</p>
-		<p id="bottom">Share your pictures!</p>
+	<div id="header2">
+		<p id="top">SIGN UP</p>
+		<p id="bottom">Hier kannst du dich Registrieren!</p>
 	</div>
    <div id="bg"></div><!--Ende bg-->
    <div id="clear"></div><!--Ende clear-->
@@ -91,32 +91,33 @@ if(isset($_GET['register'])) {
 if($showFormular) {
 ?>
 
-<form action="?register=1" method="post">
+<div id="login">
+  <form action="?register=1" method="post">
 
-Benutzername:<br>
-<input type="text" size="40" maxlength="250" name="benutzername"><br><br>
+  <label for"benutzername">Benutzername</label><br><br>
+  <input type="text" size="40" maxlength="250" name="benutzername"><br><br>
 
-E-Mail:<br>
-<input type="email" size="40" maxlength="250" name="email"><br><br>
+  <label for"email">E-Mail</label><br><br>
+  <input type="email" size="40" maxlength="250" name="email"><br><br>
 
-Dein Passwort:<br>
-<input type="password" size="40"  maxlength="250" name="passwort"><br>
+  <label for"passwort">Dein Passwort</label><br><br>
+  <input type="password" size="40"  maxlength="250" name="passwort"><br><br>
 
-Passwort wiederholen:<br>
-<input type="password" size="40" maxlength="250" name="passwort2"><br><br>
+  <label for"passwort2">Passwort wiederholen</label><br><br>
+  <input type="password" size="40" maxlength="250" name="passwort2"><br><br>
 
-<input type="submit" value="Abschicken">
-</form>
-
+  <input type="submit" value="Abschicken">
+  <div>Schon registriert? <a href="login.php">Dann geht's hier zum Login</a></div>
+  </form>
+</div><!--Ende Login-->
 <?php
 } //Ende von if($showFormular)
 ?>
  </div> <!--Ende Content-->
- 
+
 <div id="clear"></div>
- <div id="footer">
-   copyright by pixa AG
- </div><!--Ende Footer!-->
+
+  <?php include("footer.php"); ?>
 
 </body>
 </html>
