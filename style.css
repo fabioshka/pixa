@@ -118,7 +118,6 @@ body {
 	background-color: silver;
 	padding: 2em;
 	margin-top: -4px;
-	margin-bottom: 2em;
 }
 #bild_title {
 	font-size: 1.1em;
@@ -128,6 +127,18 @@ body {
 #bild_wrapper img{
 	width: 100%;
 	margin: 0;
+}
+#edit {
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+	color: #4f4f4f;
+}
+#edit a {
+	color: #4f4f4f;
+	text-decoration: none;
+}
+#edit a:hover {
+	text-decoration: underline;
 }
 #form [type=submit]{
 	color: black;
@@ -284,5 +295,4 @@ body {
 	padding: 1em;
 	background-color: #96cc2a;
 	text-align: center;
-	width: 100%;
 }

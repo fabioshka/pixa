@@ -67,6 +67,7 @@ $userid = $_SESSION['userid'];
 
   		<label for"kategorie">Kategorie</label></br></br>
   		<select type="text" name="kategorie">
+        <option disabled selected value> -- Option auswählen -- </option>
   			<option value="natur">Natur</option>
   			<option value="macro">Macro</option>
   			<option value="portrait">Portrait</option>

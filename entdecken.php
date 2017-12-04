@@ -1,9 +1,11 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="utf-8">
     <title>Entdecken</title>
 	<link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
   <style>
 				#bg {
 			/* The image used */

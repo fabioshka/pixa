@@ -67,6 +67,7 @@ foreach ($conn->query($sql) as $row) {
             LEFT JOIN bilder ON users.id = bilder.fotograf_id
             WHERE users.id = $userid";
     foreach ($conn->query($sql) as $row) {
+      if($row['bilderid'] != 0){
        ?>
        <div id="bild_wrapper">
           <img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>">
@@ -81,7 +82,13 @@ foreach ($conn->query($sql) as $row) {
             </div><!--Ende bild_beschrieb-->
           </div><!--Ende bild_beschrieb_wrapper-->
         </div><!--ende bild_wrapper-->
+        <div id="edit"><a href="bearbeiten.php?bilderid=<?php echo $row['bilderid']; ?>">Bearbeiten</a> | <a onclick="return confirm('Den Datensatz wirklich löschen?')" href="löschen.php?bilderid=<?php echo $row['bilderid']; ?>">Löschen</a></div>
        <?php
+     }
+     else {
+       echo "Du hast noch keine Bilder hinzugefüt.<br>
+            Du kannst Bilder im Menüpunkt <a href=\"upload.php\">Hochladen</a> hinzufügen.";
+     }
     }
     ?>
   </div><!--Ende Content!-->
