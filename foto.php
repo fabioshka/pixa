@@ -5,7 +5,29 @@ $userid = $_SESSION['userid'];
 
 $bilderid = $_GET["bilderid"];
 
-setcookie("zuletzt", $bilderid, time() + (86400 * 30), "/"); // 86400 = 1 Tag
+$sql_zuletzt = "SELECT link FROM bilder WHERE bilderid = '$bilderid'";
+foreach ($conn->query($sql_zuletzt) as $row_zuletzt) {
+
+  $link = $row_zuletzt['link'];
+
+}
+
+if(isset($_COOKIE['zuletzt1'])){
+
+  $zuletzt1 = $_COOKIE['zuletzt1'];
+  setcookie("zuletzt2", $zuletzt1, time() + (86400 * 30), "/"); // 86400 = 1 Tag
+
+}
+
+if(isset($_COOKIE['zuletzt'])){
+
+  $zuletzt = $_COOKIE['zuletzt'];
+  setcookie("zuletzt1", $zuletzt, time() + (86400 * 30), "/"); // 86400 = 1 Tag
+
+}
+
+setcookie("zuletzt", $link, time() + (86400 * 30), "/"); // 86400 = 1 Tag
+
 
 ?>
 <!DOCTYPE html>

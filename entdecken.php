@@ -40,18 +40,39 @@
      <?php if(isset($_COOKIE['zuletzt'])){
 
        $zuletzt = $_COOKIE['zuletzt'];
-
-       $sql_zuletzt = "SELECT * FROM bilder WHERE bilderid = '$zuletzt'";
-       foreach ($conn->query($sql_zuletzt) as $row_zuletzt) {
        ?>
 
        <h1>Zuletzt angesehen</h1>
 
-       <div id="entdecken_bilder">
-           <a href="foto.php?bilderid=<?php echo $row_zuletzt['bilderid']; ?>"><img src="<?php echo $row_zuletzt['link']; ?>" alt="<?php echo $row_zuletzt['name']; ?>"></a>
-       </div><!--Ende entdecken_bilder-->
+      <div id="entdecken_bilder">
+       <img src="<?php echo "$zuletzt"; ?>" >
+     </div><!--Ende entdecken_bilder-->
 
-      <?php } ?>
+     <div id="entdecken_bilder">
+       <?php
+       if(isset($_COOKIE['zuletzt1'])){
+         $zuletzt1 = $_COOKIE['zuletzt1'];
+         ?>
+         <img src="<?php echo "$zuletzt1"; ?>" >
+         <?php
+       }
+       ?>
+    </div><!--Ende entdecken_bilder-->
+
+    <div id="entdecken_bilder">
+      <?php
+      if(isset($_COOKIE['zuletzt2'])){
+        $zuletzt2 = $_COOKIE['zuletzt2'];
+        ?>
+        <img src="<?php echo "$zuletzt2"; ?>" >
+        <?php
+      }
+      ?>
+   </div><!--Ende entdecken_bilder-->
+
+
+
+
       <div id="clear"></div>
      <?php } ?>
 
