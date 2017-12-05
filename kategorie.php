@@ -40,7 +40,7 @@
    <div id="content">
 
      <h1>Kategorie: <?php echo $kategorie; ?></h1>
-     <div id="mehr"><a href="entdecken.php">Zurück zur übersicht</a></div>
+     <div id="mehr"><a href="entdecken.php">Zurück zur Übersicht</a></div>
 
 
      <?php
@@ -49,19 +49,9 @@
 
              foreach ($conn->query($sql) as $row) {
                 ?>
-                <div id="bild_wrapper">
-                   <img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>">
-
-                   <div id="bild_beschrieb_wrapper">
-                     <div id="bild_title">
-                       <p><?php echo $row['name']; ?></p>
-                     </div><!--Ende bild_title-->
-
-                     <div id="bild_beschrieb">
-                       <p><?php echo $row['beschrieb']; ?></p>
-                     </div><!--Ende bild_beschrieb-->
-                   </div><!--Ende bild_beschrieb_wrapper-->
-                 </div><!--ende bild_wrapper-->
+                <div id="entdecken_bilder">
+                  <a href="foto.php?bilderid=<?php echo $row['bilderid']; ?>"><img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>"></a>
+                </div><!--Ende entdecken_bilder-->
                 <?php
              }
      ?>

@@ -129,6 +129,11 @@ body {
 	width: 100%;
 	margin: 0;
 }
+#fotograf {
+	margin-top: 1em;
+	font-weight: 400;
+	font-size: 1.1em;
+}
 #entdecken_bilder {
 	width:15em;
   height:15em;
