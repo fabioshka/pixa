@@ -1,6 +1,10 @@
 <?php session_start();
 
  include("dbconnect.php");
+
+ if(isset($_SESSION['userid'])){
+   $userid = $_SESSION['userid'];
+ }
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -113,9 +117,32 @@
 
       </div><!--Ende entdecken_bild_wrapper-->
 
+      <?php
+      if(isset($_SESSION['userid'])){
+      ?>
 
-      <h1>Das könnte dir gefallen...</h1>
+          <h1>Deine Top Kategorien...</h1>
 
+      <?php
+
+      $sql_interessen = "SELECT * FROM interessen WHERE fotograf_id = $userid ORDER BY WERT Desc LIMIT 3";
+        foreach ($conn->query($sql_interessen) as $row_interessen) {
+
+        $interessen_kategorien[] = $row_interessen['kategorie'];
+
+        }
+
+        foreach ($interessen_kategorien as $key => $kategorien) {
+          ?>
+          <div id="interessen">
+            <a href="kategorie.php?kategorie=<?php echo $kategorien;?>"><?php echo $kategorien;?></a><br>
+          </div><!--Ende interessen-->
+          <?php
+
+        }
+
+      }
+      ?>
 
    </div><!--Ende Content!-->
 

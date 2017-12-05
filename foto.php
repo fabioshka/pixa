@@ -2,10 +2,39 @@
 session_start();
  ob_start();
 
-ini_set("display_errors", "1");
-  error_reporting(E_ALL);
+  // ini_set("display_errors", "1");
+  // error_reporting(E_ALL);
 include("dbconnect.php");
-//$userid = $_SESSION['userid'];
+
+//interessen
+
+
+if(isset($_SESSION['userid'])){
+$userid = $_SESSION['userid'];
+
+//interessen
+$kategorie = $_GET["kategorie"];
+
+if ($result = $conn->query("SELECT * FROM interessen WHERE fotograf_id=$userid AND kategorie='$kategorie'")) {
+
+    $row_cnt = $result->num_rows;
+}
+
+if($row_cnt == 0){
+  $sql_interessen = "INSERT INTO interessen (fotograf_id, kategorie, wert) VALUES ($userid, '$kategorie', 1)";
+}
+else {
+  $sql_interessen = "UPDATE interessen SET wert=wert+1 WHERE fotograf_id=$userid AND kategorie='$kategorie'";
+}
+
+
+if ($conn->query($sql_interessen) === TRUE) {
+    echo " ";
+} else {
+  echo "Error updating record: " . $conn->error;
+}
+
+}
 
 $bilderid = $_GET["bilderid"];
 
