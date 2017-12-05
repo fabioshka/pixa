@@ -65,7 +65,7 @@ foreach ($conn->query($sql) as $row) {
     <?php
     $sql = "SELECT * FROM users
             LEFT JOIN bilder ON users.id = bilder.fotograf_id
-            WHERE users.id = $userid";
+            WHERE users.id = $userid ORDER BY datum Desc";
     foreach ($conn->query($sql) as $row) {
       if($row['bilderid'] != 0){
        ?>

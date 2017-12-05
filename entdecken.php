@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php session_start();
+
+ include("dbconnect.php");
+?>
 <!DOCTYPE html>
 <html lang="de">
   <head>
@@ -32,7 +35,45 @@
     <div id="bg"></div><!--Ende bg-->
     <div id="clear"></div><!--Ende clear-->
 
-   <div id="content"></div><!--Ende Content!-->
+   <div id="content">
+
+     <h1>Bilder nach Kategorien</h1>
+
+     <div id="entdecken_bild_wrapper">
+
+           <?php
+
+           $sql_kategorie = "SELECT kategorie FROM bilder GROUP BY kategorie";
+           foreach ($conn->query($sql_kategorie) as $row_kategorie) {
+
+             $kategorie_array[] = $row_kategorie['kategorie'];
+
+           }
+
+           //$kategorie_array = array('Natur', 'Macro', 'Portrait', 'Kunst');
+
+           foreach ($kategorie_array as $key => $kategorie) {
+
+               echo "<h2>$kategorie</h2>";
+               echo "<div id=\"mehr\"><a href=\"kategorie.php?kategorie=$kategorie\">Mehr von $kategorie...</a></div>";
+
+
+
+               $sql = "SELECT * FROM bilder WHERE kategorie = '$kategorie' LIMIT 3";
+               foreach ($conn->query($sql) as $row) {
+               ?>
+
+                <div id="entdecken_bilder">
+                  <img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>">
+                </div><!--Ende entdecken_bilder-->
+
+
+            <?php } ?>
+              <div id="clear"></div>
+          <?php } ?>
+
+      </div><!--Ende entdecken_bild_wrapper-->
+   </div><!--Ende Content!-->
 
    <?php include("footer.php"); ?>
 

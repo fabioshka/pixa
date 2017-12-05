@@ -74,10 +74,10 @@ if ($conn->query($sql) === TRUE) {
     		<label for"kategorie">Kategorie</label></br></br>
     		<select type="text" name="kategorie">
           <?php if(!isset($row['kategorie'])) { ?><option disabled selected value> -- Option auswählen -- </option><?php } ?>
-    			<option value="natur" <?php if($row['kategorie'] == "natur") { echo "selected"; } ?> >Natur</option>
-    			<option value="macro" <?php if($row['kategorie'] == "macro") { echo "selected"; } ?> >Macro</option>
-    			<option value="portrait" <?php if($row['kategorie'] == "portrait") { echo "selected"; } ?> >Portrait</option>
-    			<option value="kunst" <?php if($row['kategorie'] == "kunst") { echo "selected"; } ?> >Kunst</option>
+    			<option value="Natur" <?php if($row['kategorie'] == "natur") { echo "selected"; } ?> >Natur</option>
+    			<option value="Macro" <?php if($row['kategorie'] == "macro") { echo "selected"; } ?> >Macro</option>
+    			<option value="Portrait" <?php if($row['kategorie'] == "portrait") { echo "selected"; } ?> >Portrait</option>
+    			<option value="Kunst" <?php if($row['kategorie'] == "kunst") { echo "selected"; } ?> >Kunst</option>
     		</select> </br> </br>
 
         <input type="submit" value="Ändern">

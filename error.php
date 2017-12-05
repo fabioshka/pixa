@@ -1,1 +1,0 @@
-echo('catch this -> ' ;. $thisdoesnotexist);

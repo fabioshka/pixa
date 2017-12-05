@@ -68,13 +68,13 @@ $userid = $_SESSION['userid'];
   		<label for"kategorie">Kategorie</label></br></br>
   		<select type="text" name="kategorie">
         <option disabled selected value> -- Option auswählen -- </option>
-  			<option value="natur">Natur</option>
-  			<option value="macro">Macro</option>
-  			<option value="portrait">Portrait</option>
-  			<option value="kunst">Kunst</option>
+  			<option value="Natur">Natur</option>
+  			<option value="Macro">Macro</option>
+  			<option value="Portrait">Portrait</option>
+  			<option value="Kunst">Kunst</option>
   		</select> </br> </br>
 
-      <label for"datei">Bild auswählen (max 500KB)</label></br></br>
+      <label for"datei">Bild auswählen (max 5MB)</label></br></br>
         <input type="file" name="datei"><br> </br><br>
 
       <input type="submit" value="Hochladen">
