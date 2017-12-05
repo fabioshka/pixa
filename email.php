@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Link</title>
 	<link href="style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
 	<style>
