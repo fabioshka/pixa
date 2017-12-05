@@ -47,7 +47,7 @@ error_reporting(E_ALL);
   $link = 'http://localhost/pixa/';
   
   //send email
-  mail($admin_email, "$subject", $link, "From:" . $email);
+  mail($admin_email, "$subject", $link, "Absender:" . $email);
   
   //Email response
   echo "Die Mail wurde verschickt!";
