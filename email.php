@@ -38,7 +38,7 @@ error_reporting(E_ALL);
 
   <h1>Link schicken</h1>
 		<div id="login">
-		<?php if (isset($_POST['email']))  {
+		<?php if (isset($_POST['email']) && !empty($_POST['email'])) {
 			
   
   //Email information
