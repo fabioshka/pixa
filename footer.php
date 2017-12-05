@@ -14,6 +14,7 @@
       <a href="#"><img src="img/icon/facebook.png" alt="Facebook"></a>
       <a href="#"><img src="img/icon/instagram.png" alt="Instagram"></a>
       <a href="#"><img src="img/icon/twitter.png" alt="Twitter"></a>
+	  <a href="email.php"><img src="img/icon/email.png" alt="Email"></a>
     </div><!--Ende socialmedia-->
 
 <div id="clear"></div><!--Ende clear-->
