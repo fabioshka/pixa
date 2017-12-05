@@ -1,14 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.2
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Erstellungszeit: 05. Dez 2017 um 19:31
--- Server-Version: 5.6.35
--- PHP-Version: 7.1.6
+-- Host: 127.0.0.1
+-- Erstellungszeit: 05. Dez 2017 um 20:58
+-- Server-Version: 10.1.21-MariaDB
+-- PHP-Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Datenbank: `pixa`
@@ -39,7 +45,14 @@ INSERT INTO `bilder` (`bilderid`, `fotograf_id`, `name`, `beschrieb`, `kategorie
 (8, 1, 'Landschaft', 'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ', 'Natur', 'img/country_1.jpg', '2017-12-04 23:00:00'),
 (9, 1, 'Bild 5', 'Lorem Ipsum dolor', 'Natur', 'img/Berg.jpg', '2017-12-05 12:32:13'),
 (10, 1, 'Landschaft 2', 'sdlfhsdk skdjfhskdjfh sdkfhsdkjfh skdfhs fkjhsdf ', 'Natur', 'img/IMG_0017.jpg', '2017-12-05 14:57:51'),
-(11, 1, 'Test 100', 'dkjf skdjfhhsd sdkf skdjf dweguirwt. cvxc saie xbvhx', 'Natur', 'img/IMG_0935.jpg', '2017-12-05 15:43:12');
+(11, 1, 'Test 100', 'dkjf skdjfhhsd sdkf skdjf dweguirwt. cvxc saie xbvhx', 'Natur', 'img/IMG_0935.jpg', '2017-12-05 15:43:12'),
+(12, 1, 'Tropf', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Macro', 'img/drip-351619_640.jpg', '2017-12-05 19:47:36'),
+(13, 1, 'Blume', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Macro', 'img/flower-2197679_640.jpg', '2017-12-05 19:49:06'),
+(14, 2, 'Frau', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Portrait', 'img/girl-2032802_640.jpg', '2017-12-05 19:52:23'),
+(15, 2, 'Alter Mann', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Portrait', 'img/portrait-2870659_640.jpg', '2017-12-05 19:52:46'),
+(16, 2, 'Trees', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Natur', 'img/trees-2920264_640.jpg', '2017-12-05 19:53:19'),
+(17, 3, 'Malerei', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Kunst', 'img/woman-845850_640.jpg', '2017-12-05 19:55:57'),
+(18, 3, 'Vogelchen', 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua', 'Kunst', 'img/bird-2967114_640.jpg', '2017-12-05 19:56:30');
 
 -- --------------------------------------------------------
 
@@ -63,7 +76,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `benutzername`, `email`, `passwort`, `vorname`, `nachname`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'test.test@test.com', '$2y$10$knhKRilgGYaLFdqfViynmO8NLYq73sDa4V5Qs/w/3rzsa3tFjTFFW', '', '', '2017-12-04 09:10:56', NULL);
+(1, 'test', 'test.test@test.com', '$2y$10$knhKRilgGYaLFdqfViynmO8NLYq73sDa4V5Qs/w/3rzsa3tFjTFFW', '', '', '2017-12-04 09:10:56', NULL),
+(2, 'Henry Thoreau', 'gugus.hallo@gugus.ch', '$2y$10$oBx7L8Qa8dKVTAyDHs/MFOCWmqPOPrFuUcwhCEZkfIO04TiUeJrnG', '', '', '2017-12-05 19:50:08', NULL),
+(3, 'Ein Fotograph', 'kunstkunst@kunst.ch', '$2y$10$lOFp70rOaQhgl/4.EKLL2ebZHzPNovZqUhOhSVxMTY1DyZB0kToR6', '', '', '2017-12-05 19:55:02', NULL);
 
 --
 -- Indizes der exportierten Tabellen
@@ -90,9 +105,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `bilder`
 --
 ALTER TABLE `bilder`
-  MODIFY `bilderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `bilderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
