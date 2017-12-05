@@ -50,7 +50,7 @@
              foreach ($conn->query($sql) as $row) {
                 ?>
                 <div id="entdecken_bilder">
-                  <a href="foto.php?bilderid=<?php echo $row['bilderid']; ?>"><img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>"></a>
+                  <a href="foto.php?bilderid=<?php echo $row['bilderid']; ?>&kategorie=<?php echo $row['kategorie']; ?>"><img src="<?php echo $row['link']; ?>" alt="<?php echo $row['name']; ?>"></a>
                 </div><!--Ende entdecken_bilder-->
                 <?php
              }

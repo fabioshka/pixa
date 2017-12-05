@@ -1,10 +1,15 @@
 <?php
 session_start();
+ ob_start();
+
+ini_set("display_errors", "1");
+  error_reporting(E_ALL);
 include("dbconnect.php");
 $userid = $_SESSION['userid'];
 
 $bilderid = $_GET["bilderid"];
 
+/* Zuletzt angesehen */
 $sql_zuletzt = "SELECT link FROM bilder WHERE bilderid = '$bilderid'";
 foreach ($conn->query($sql_zuletzt) as $row_zuletzt) {
 
@@ -68,8 +73,6 @@ setcookie("zuletzt", $link, time() + (86400 * 30), "/"); // 86400 = 1 Tag
       <div id="mehr"><a href="javascript:window.history.back()">Zurück zu den Kategorien</a></div>
       <?php
 
-
-
         $sql = "SELECT * FROM users
                 LEFT JOIN bilder ON users.id = bilder.fotograf_id
                 WHERE bilderid = '$bilderid' ORDER BY datum Desc";
@@ -96,11 +99,25 @@ setcookie("zuletzt", $link, time() + (86400 * 30), "/"); // 86400 = 1 Tag
       }
       ?>
 
-
-
     </div><!--Ende Content!-->
 
     <?php include("footer.php"); ?>
 
  </body><!-- Ende Body!-->
 </html>
+
+<?php
+$kategorie = $_GET['kategorie'];
+
+  $interessen = array();
+  $interessen["$kategorie"] = $interessen["$kategorie"] + 1;
+
+  $interessen = serialize($interessen);
+  setcookie('interessen', $interessen);
+
+  $interessen = $_COOKIE['interessen'];
+  $interessen = stripslashes($interessen);
+  $interessen = unserialize($interessen);
+
+print_r($interessen);
+?>
