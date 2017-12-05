@@ -39,6 +39,7 @@ error_reporting(E_ALL);
   <h1>Link schicken</h1>
 		<div id="login">
 		<?php if (isset($_POST['email']))  {
+			
   
   //Email information
   $admin_email = $_POST['email'];
@@ -47,7 +48,7 @@ error_reporting(E_ALL);
   $link = 'http://localhost/pixa/';
   
   //send email
-  mail($admin_email, "$subject", $link, "Absender:" . $email);
+  mail($admin_email, "$subject", $link, "From:" . $email);
   
   //Email response
   echo "Die Mail wurde verschickt!";
