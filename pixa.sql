@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Erstellungszeit: 05. Dez 2017 um 20:58
--- Server-Version: 10.1.21-MariaDB
--- PHP-Version: 5.6.30
+-- Host: localhost
+-- Erstellungszeit: 06. Dez 2017 um 00:00
+-- Server-Version: 5.6.35
+-- PHP-Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Datenbank: `pixa`
@@ -57,6 +51,29 @@ INSERT INTO `bilder` (`bilderid`, `fotograf_id`, `name`, `beschrieb`, `kategorie
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `interessen`
+--
+
+CREATE TABLE `interessen` (
+  `id` int(11) NOT NULL,
+  `fotograf_id` int(11) NOT NULL,
+  `kategorie` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `wert` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `interessen`
+--
+
+INSERT INTO `interessen` (`id`, `fotograf_id`, `kategorie`, `wert`) VALUES
+(1, 4, 'Natur', 6),
+(2, 4, 'Kunst', 9),
+(4, 4, 'Portrait', 4),
+(5, 4, 'Macro', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `users`
 --
 
@@ -78,7 +95,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `benutzername`, `email`, `passwort`, `vorname`, `nachname`, `created_at`, `updated_at`) VALUES
 (1, 'test', 'test.test@test.com', '$2y$10$knhKRilgGYaLFdqfViynmO8NLYq73sDa4V5Qs/w/3rzsa3tFjTFFW', '', '', '2017-12-04 09:10:56', NULL),
 (2, 'Henry Thoreau', 'gugus.hallo@gugus.ch', '$2y$10$oBx7L8Qa8dKVTAyDHs/MFOCWmqPOPrFuUcwhCEZkfIO04TiUeJrnG', '', '', '2017-12-05 19:50:08', NULL),
-(3, 'Ein Fotograph', 'kunstkunst@kunst.ch', '$2y$10$lOFp70rOaQhgl/4.EKLL2ebZHzPNovZqUhOhSVxMTY1DyZB0kToR6', '', '', '2017-12-05 19:55:02', NULL);
+(3, 'Ein Fotograph', 'kunstkunst@kunst.ch', '$2y$10$lOFp70rOaQhgl/4.EKLL2ebZHzPNovZqUhOhSVxMTY1DyZB0kToR6', '', '', '2017-12-05 19:55:02', NULL),
+(4, 'Fabio', 'fabio.kalbermatter@lernende.bfo-vs.ch', '$2y$10$ostxh/suA95HhyM4tNSXjubCND5op9vNpFiPeS0pMhvLfTujrQ1tS', '', '', '2017-12-05 21:09:44', NULL);
 
 --
 -- Indizes der exportierten Tabellen
@@ -89,6 +107,13 @@ INSERT INTO `users` (`id`, `benutzername`, `email`, `passwort`, `vorname`, `nach
 --
 ALTER TABLE `bilder`
   ADD PRIMARY KEY (`bilderid`);
+
+--
+-- Indizes für die Tabelle `interessen`
+--
+ALTER TABLE `interessen`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `fotograf_id` (`fotograf_id`,`kategorie`);
 
 --
 -- Indizes für die Tabelle `users`
@@ -107,10 +132,12 @@ ALTER TABLE `users`
 ALTER TABLE `bilder`
   MODIFY `bilderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
+-- AUTO_INCREMENT für Tabelle `interessen`
+--
+ALTER TABLE `interessen`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
