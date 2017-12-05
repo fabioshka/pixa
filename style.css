@@ -72,11 +72,11 @@ body {
 		text-transform: uppercase;
 }
 #top {
-	font-size: 15em;
+	font-size: 10em;
 	font-weight: 700;
 }
 #bottom {
-	font-size: 3em;
+	font-size: 1.5em;
 	margin-top: -1em;
 	font-weight: 300;
 }

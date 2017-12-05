@@ -5,7 +5,7 @@ session_start();
 ini_set("display_errors", "1");
   error_reporting(E_ALL);
 include("dbconnect.php");
-$userid = $_SESSION['userid'];
+//$userid = $_SESSION['userid'];
 
 $bilderid = $_GET["bilderid"];
 
@@ -105,19 +105,3 @@ setcookie("zuletzt", $link, time() + (86400 * 30), "/"); // 86400 = 1 Tag
 
  </body><!-- Ende Body!-->
 </html>
-
-<?php
-$kategorie = $_GET['kategorie'];
-
-  $interessen = array();
-  $interessen["$kategorie"] = $interessen["$kategorie"] + 1;
-
-  $interessen = serialize($interessen);
-  setcookie('interessen', $interessen);
-
-  $interessen = $_COOKIE['interessen'];
-  $interessen = stripslashes($interessen);
-  $interessen = unserialize($interessen);
-
-print_r($interessen);
-?>
