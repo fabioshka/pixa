@@ -128,19 +128,17 @@
 
       $sql_interessen = "SELECT * FROM interessen WHERE fotograf_id = $userid ORDER BY WERT Desc LIMIT 3";
         foreach ($conn->query($sql_interessen) as $row_interessen) {
-
-        $interessen_kategorien[] = $row_interessen['kategorie'];
-
-        }
-
-        foreach ($interessen_kategorien as $key => $kategorien) {
-          ?>
-          <div id="interessen">
-            <a href="kategorie.php?kategorie=<?php echo $kategorien;?>"><?php echo $kategorien;?></a><br>
+			
+			?>
+				
+		  <div id="interessen">
+            <a href="kategorie.php?kategorie=<?php echo $row_interessen['kategorie'];?>"><?php echo $row_interessen['kategorie'];?></a><br>
           </div><!--Ende interessen-->
-          <?php
-
+				
+			<?php
         }
+
+      
 
       }
       ?>
