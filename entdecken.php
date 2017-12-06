@@ -5,6 +5,7 @@
  if(isset($_SESSION['userid'])){
    $userid = $_SESSION['userid'];
  }
+ error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="de">
